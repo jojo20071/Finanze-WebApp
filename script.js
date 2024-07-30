@@ -46,3 +46,16 @@ document.addEventListener('DOMContentLoaded', () => {
         expensesList.appendChild(expenseItem);
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // ... vorhandener Code ...
+
+    // Neue Event Listener für Cancel Buttons
+    document.getElementById('login-cancel').addEventListener('click', () => {
+        document.getElementById('loginForm').reset();
+    });
+
+    document.getElementById('register-cancel').addEventListener('click', () => {
+        document.getElementById('registerForm').reset();
+    });
+});
