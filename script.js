@@ -114,3 +114,17 @@ document.addEventListener('DOMContentLoaded', () => {
         type: 'line',
         data: investmentsData
     });
+    const debtsData = {
+        labels: ['Debt 1', 'Debt 2'],
+        datasets: [{
+            label: 'Debts',
+            data: [700, 300],
+            backgroundColor: ['pink', 'brown']
+        }]
+    };
+
+    const debtsChart = new Chart(debtsCtx, {
+        type: 'doughnut',
+        data: debtsData
+    });
+});
