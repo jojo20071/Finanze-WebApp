@@ -23,5 +23,23 @@
         <button type="submit">Register</button>
         <button type="button" id="register-cancel">Cancel</button> <!-- Neu hinzugefügt -->
     </form>
+    <section id="budget-section">
+        <h2>Enter Your Budget</h2>
+        <form id="budgetForm">
+            <label for="income">Monthly Income:</label>
+            <input type="number" id="income" name="income" required>
+            <label for="expenses">Monthly Expenses:</label>
+            <div id="expenses-list">
+                <div class="expense-item">
+                    <input type="text" name="expense-name" placeholder="Expense Name">
+                    <input type="number" name="expense-amount" placeholder="Amount">
+                </div>
+            </div>
+            <button type="button" id="add-expense">Add Expense</button>
+            <label for="notes">Notes:</label>
+            <textarea id="notes" name="notes" placeholder="Additional Notes" rows="4"></textarea> <!-- Neu hinzugefügt -->
+            <button type="submit">Calculate</button>
+        </form>
+    </section>
 </body>
 </html>
