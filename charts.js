@@ -1,24 +1,63 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const loginForm = document.getElementById('loginForm');
-    const registerForm = document.getElementById('registerForm');
+    const budgetCtx = document.getElementById('budgetChart').getContext('2d');
+    const savingsCtx = document.getElementById('savingsChart').getContext('2d');
+    const investmentsCtx = document.getElementById('investmentsChart').getContext('2d');
+    const debtsCtx = document.getElementById('debtsChart').getContext('2d');
 
-    loginForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const email = document.getElementById('login-email').value;
-        const password = document.getElementById('login-password').value;
+    // Example data for charts
+    const budgetData = {
+        labels: ['Income', 'Expenses'],
+        datasets: [{
+            label: 'Budget',
+            data: [1000, 500],
+            backgroundColor: ['green', 'red']
+        }]
+    };
 
-        // Simuliere eine erfolgreiche Anmeldung
-        console.log('Login:', email, password);
-        alert('Login successful!'); // Neu hinzugefügt
+    const budgetChart = new Chart(budgetCtx, {
+        type: 'pie',
+        data: budgetData
     });
 
-    registerForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const email = document.getElementById('register-email').value;
-        const password = document.getElementById('register-password').value;
+    const savingsData = {
+        labels: ['Goal 1', 'Goal 2'],
+        datasets: [{
+            label: 'Savings Goals',
+            data: [300, 200],
+            backgroundColor: ['blue', 'orange']
+        }]
+    };
 
-        // Simuliere eine erfolgreiche Registrierung
-        console.log('Register:', email, password);
-        alert('Registration successful!'); // Neu hinzugefügt
+    const savingsChart = new Chart(savingsCtx, {
+        type: 'bar',
+        data: savingsData
+    });
+
+    const investmentsData = {
+        labels: ['Investment 1', 'Investment 2'],
+        datasets: [{
+            label: 'Investments',
+            data: [400, 600],
+            backgroundColor: ['purple', 'yellow']
+        }]
+    };
+
+    const investmentsChart = new Chart(investmentsCtx, {
+        type: 'line',
+        data: investmentsData
+    });
+
+    const debtsData = {
+        labels: ['Debt 1', 'Debt 2'],
+        datasets: [{
+            label: 'Debts',
+            data: [700, 300],
+            backgroundColor: ['pink', 'brown']
+        }]
+    };
+
+    const debtsChart = new Chart(debtsCtx, {
+        type: 'doughnut',
+        data: debtsData
     });
 });

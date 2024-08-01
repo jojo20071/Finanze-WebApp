@@ -3,43 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Personal Finance and Budgeting</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <form id="loginForm">
-        <label for="login-email">Email:</label>
-        <input type="email" id="login-email" name="login-email" required>
-        <label for="login-password">Password:</label>
-        <input type="password" id="login-password" name="login-password" required>
-        <button type="submit">Login</button>
-        <button type="button" id="login-cancel">Cancel</button> <!-- Neu hinzugefügt -->
-    </form>
-    <!-- ... -->
-    <form id="registerForm">
-        <label for="register-email">Email:</label>
-        <input type="email" id="register-email" name="register-email" required>
-        <label for="register-password">Password:</label>
-        <input type="password" id="register-password" name="register-password" required>
-        <button type="submit">Register</button>
-        <button type="button" id="register-cancel">Cancel</button> <!-- Neu hinzugefügt -->
-    </form>
-    <section id="budget-section">
-        <h2>Enter Your Budget</h2>
-        <form id="budgetForm">
-            <label for="income">Monthly Income:</label>
-            <input type="number" id="income" name="income" required>
-            <label for="expenses">Monthly Expenses:</label>
-            <div id="expenses-list">
-                <div class="expense-item">
-                    <input type="text" name="expense-name" placeholder="Expense Name">
-                    <input type="number" name="expense-amount" placeholder="Amount">
+    <header>
+        <h1>Personal Finance and Budgeting</h1>
+    </header>
+    <main>
+        <section id="auth-section">
+            <h2>User Authentication</h2>
+            <div id="auth-container">
+                <div id="login-form">
+                    <h3>Login</h3>
+                    <form id="loginForm">
+                        <label for="login-email">Email:</label>
+                        <input type="email" id="login-email" name="login-email" required>
+                        <label for="login-password">Password:</label>
+                        <input type="password" id="login-password" name="login-password" required>
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+                <div id="register-form">
+                    <h3>Register</h3>
+                    <form id="registerForm">
+                        <label for="register-email">Email:</label>
+                        <input type="email" id="register-email" name="register-email" required>
+                        <label for="register-password">Password:</label>
+                        <input type="password" id="register-password" name="register-password" required>
+                        <button type="submit">Register</button>
+                    </form>
                 </div>
             </div>
-            <button type="button" id="add-expense">Add Expense</button>
-            <label for="notes">Notes:</label>
-            <textarea id="notes" name="notes" placeholder="Additional Notes" rows="4"></textarea> <!-- Neu hinzugefügt -->
-            <button type="submit">Calculate</button>
-        </form>
-    </section>
+        </section>
+        <section id="budget-section">
+            <h2>Enter Your Budget</h2>
+            <form id="budgetForm">
+                <label for="income">Monthly Income:</label>
+                <input type="number" id="income" name="income" required>
+                <label for="expenses">Monthly Expenses:</label>
+                <div id="expenses-list">
+                    <div class="expense-item">
+                        <input type="text" name="expense-name" placeholder="Expense Name">
+                        <input type="number" name="expense-amount" placeholder="Amount">
+                    </div>
+                </div>
+                <button type="button" id="add-expense">Add Expense</button>
+                <button type="submit">Calculate</button>
+            </form>
+        </section>
+        <section id="result">
+            <h2>Budget Result</h2>
+            <p id="resultMessage"></p>
+        </section>
+        <section id="savings-goals">
+            <h2>Savings Goals</h2>
+            <form id="savingsForm">
+                <label for="goal-name">Goal Name:</label>
+                <input type="text" id="goal-name" name="goal-name" required>
+                <label for="goal-amount">Goal Amount:</label>
+                <input type="number" id="goal-amount" name="goal-amount" required>
+                <button type="submit">Add Goal</button>
+            </form>
+            <ul id="savings-list"></ul>
+        </section>
+        <section id="investments">
+            <h2>Investments</h2>
+            <form id="investmentForm">
+                <label for="investment-name">Investment Name:</label>
+                <input type="text" id="investment-name" name="investment-name" required>
+                <label for="investment-amount">Investment Amount:</label>
+                <input type="number" id="investment-amount" name="investment-amount" required>
+                <button type="submit">Add Investment</button>
+            </form>
+            <ul id="investment-list"></ul>
+        </section>
+        <section id="debts">
+            <h2>Debts</h2>
+            <form id="debtForm">
+                <label for="debt-name">Debt Name:</label>
+                <input type="text" id="debt-name" name="debt-name" required>
+                <label for="debt-amount">Debt Amount:</label>
+                <input type="number" id="debt-amount" name="debt-amount" required>
+                <button type="submit">Add Debt</button>
+            </form>
+            <ul id="debt-list"></ul>
+        </section>
+        <section id="charts">
+            <h2>Charts and Graphs</h2>
+            <canvas id="budgetChart"></canvas>
+            <canvas id="savingsChart"></canvas>
+            <canvas id="investmentsChart"></canvas>
+            <canvas id="debtsChart"></canvas>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    <script src="charts.js"></script>
+    <script src="auth.js"></script>
 </body>
 </html>

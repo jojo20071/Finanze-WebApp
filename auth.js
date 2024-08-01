@@ -1,22 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // ... vorhandener Code ...
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
 
-    addExpenseButton.addEventListener('click', () => {
-        const expenseItem = document.createElement('div');
-        expenseItem.className = 'expense-item';
-        expenseItem.innerHTML = `
-            <input type="text" name="expense-name" placeholder="Expense Name">
-            <input type="number" name="expense-amount" placeholder="Amount">
-            <button type="button" class="edit-expense">Edit</button> <!-- Neu hinzugefügt -->
-        `;
-        expensesList.appendChild(expenseItem);
+    loginForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
 
-        // Event Listener für Edit Button
-        expenseItem.querySelector('.edit-expense').addEventListener('click', () => {
-            const name = prompt('Edit Expense Name:', expenseItem.querySelector('input[name="expense-name"]').value);
-            const amount = prompt('Edit Expense Amount:', expenseItem.querySelector('input[name="expense-amount"]').value);
-            if (name !== null) expenseItem.querySelector('input[name="expense-name"]').value = name;
-            if (amount !== null) expenseItem.querySelector('input[name="expense-amount"]').value = amount;
-        });
+        // Here you would send a request to your server to authenticate the user
+        console.log('Login:', email, password);
+    });
+
+    registerForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const email = document.getElementById('register-email').value;
+        const password = document.getElementById('register-password').value;
+
+        // Here you would send a request to your server to register the user
+        console.log('Register:', email, password);
     });
 });
