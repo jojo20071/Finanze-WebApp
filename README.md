@@ -1,6 +1,8 @@
 # Budget Manager
-
+link: https://finanze-web-app.vercel.app/
 ## Overview
+![image](https://github.com/user-attachments/assets/ff38c30f-5057-4280-9f66-e1f4780b0a7b)
+
 
 Budget Manager is a simple web application designed to help users track their income and expenses. By entering income and various expenses, users can instantly see if they have a surplus, deficit, or balanced budget for the month.
 
